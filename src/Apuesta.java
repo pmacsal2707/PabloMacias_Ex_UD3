@@ -125,7 +125,11 @@ public class Apuesta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Metodo que se encarga de generar un nuevo partido
+     * @param evt variable que entra por parametros
+     */
     private void bNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNuevoActionPerformed
         CrearPartido agregarpartido = new CrearPartido(this);
         agregarpartido.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -135,10 +139,19 @@ public class Apuesta extends javax.swing.JFrame {
         agregarpartido.setVisible(Boolean.TRUE);
     }//GEN-LAST:event_bNuevoActionPerformed
 
+    /**
+     * Metodo que borra un partido segun el indice que tenga
+     * @param evt variable que entra por parametros
+     */
     private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
         borraPartido(listaQuiniela.getSelectedIndex());
     }//GEN-LAST:event_bEliminarActionPerformed
 
+    /**
+     * Metodo que se encarga de restaurar la quiniela
+     * y dejarla vacia cuando se resetea
+     * @param evt variable que entra por parametros
+     */
     private void bResetearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bResetearActionPerformed
         DefaultListModel modelovacio = new DefaultListModel();
         this.listaQuiniela.setModel(modelovacio);
@@ -160,8 +173,10 @@ public class Apuesta extends javax.swing.JFrame {
         return (int)Math.floor((Math.random()*(n2-n1+1) + n1));
     }
     /**
-     * 
-     * @param evt 
+     * Metodo que se encarga de mostrar la quiniela,
+     * segun el numero aleatorio que se genera anteriormente,
+     * dependiendo de si es 0, 1 o 2
+     * @param evt variable que entra por parametros
      */
     private void bRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRealizarActionPerformed
         DefaultListModel modeloquinielaresuelta = new DefaultListModel();
