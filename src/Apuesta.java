@@ -8,10 +8,15 @@ import javax.swing.WindowConstants;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/**
+ * Clase
+ * @author pmacsal2707
+ */
 public class Apuesta extends javax.swing.JFrame {
 
-   
+   /**
+    * Metodo que se encarga de la apuesta de la quiniela
+    */
     public Apuesta() 
     {
         initComponents();
@@ -140,12 +145,24 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modelovacio);
     }//GEN-LAST:event_bResetearActionPerformed
 
-   
+   /**
+    * Metodo que devuelve un numero aleatorio
+    * se genera un numero aleatorio y luego se
+    * multiplica por n2-n1+1 y mas tarde se le
+    * suma n1. Estos numeros enteros entran por
+    * parametros
+    * @param n1 entero que entra por parametros
+    * @param n2 entero que entra por parametros
+    * @return devuelve un entero
+    */
     public int cualquiera(int n1, int n2)
     {
         return (int)Math.floor((Math.random()*(n2-n1+1) + n1));
     }
-    
+    /**
+     * 
+     * @param evt 
+     */
     private void bRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRealizarActionPerformed
         DefaultListModel modeloquinielaresuelta = new DefaultListModel();
 
@@ -172,7 +189,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modeloquinielaresuelta);
     }//GEN-LAST:event_bRealizarActionPerformed
 
-    
+    /**
+     * Metodo que se encarga de crear un nuevo partido
+     * @param partido string que le entra por parametros
+     */
     public void partidoNuevo(String partido)
     {
         DefaultListModel modelonuevo = new DefaultListModel();
@@ -186,7 +206,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaQuiniela.setModel(modelonuevo);
     }
     
-  
+    /**
+     * Metodo que se encarga de borrar un partido
+     * @param indice numero entero que entra por parametros, es el indice del partido que se quiere borrar
+     */
     public void borraPartido(int indice)
     {
         DefaultListModel modelonuevoquiniela = new DefaultListModel();
@@ -212,7 +235,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modelonuevoresultados);
     }
     
-   
+   /**
+    * Metodo que se encarga de la interfaz gráfica
+    * @param args array de string
+    */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
