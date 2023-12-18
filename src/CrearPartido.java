@@ -2,20 +2,31 @@
 import java.awt.event.KeyEvent;
 
 
-
+/**
+ * Clase principal que se encarga de crear un partido para la quiniela
+ * @author pmacsal2707
+ */
 public class CrearPartido extends javax.swing.JFrame
 {
    
-    
+    /**
+     * Variable privada de Apuesta
+     */
     private Apuesta v;
     
-   
+   /**
+    * Metodo que se encarga de iniciar los componentes que participaran
+    */
     public CrearPartido() 
     {
         initComponents();
     }
 
-   
+   /**
+    * Metodo que iguala la vaariable v de Apuesta con una variable Apuesta llamada
+    * ventana
+    * @param ventana variable 
+    */
     public CrearPartido(Apuesta ventana) 
     {
         initComponents();
@@ -70,6 +81,10 @@ public class CrearPartido extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Matodo que recibe por parametros la variable tPartido.getText()
+     * @param p variable string
+     */
     public void añadePartido(String p)
     {
         v.partidoNuevo(p);
@@ -77,10 +92,19 @@ public class CrearPartido extends javax.swing.JFrame
         tPartido.requestFocus();
     }
     
+    /**
+     * Metodo que se encarga de generar por partido si le llega por parametros
+     * la variable tPartido.getText()
+     * @param evt variable
+     */
     private void bAgregarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarPartidoActionPerformed
         añadePartido(tPartido.getText());
     }//GEN-LAST:event_bAgregarPartidoActionPerformed
 
+    /**
+     * Matodo que detecta si pulsamos  enter y si lo hacemos genera un partido
+     * @param evt variable segun la tecla que pulsamos del teclado
+     */
     private void tPartidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tPartidoKeyPressed
         if( evt.getKeyCode() == KeyEvent.VK_ENTER )
         {
@@ -88,7 +112,10 @@ public class CrearPartido extends javax.swing.JFrame
         }
     }//GEN-LAST:event_tPartidoKeyPressed
 
-    
+    /**
+    * Metodo que se encarga de la interfaz gráfica
+    * @param args array de string
+    */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
